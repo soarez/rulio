@@ -1,0 +1,13 @@
+Rulio, a Barebones irc bot.
+
+Before running, run npm install and copy config.json.example to config.json (this is '.gitignore'd).
+
+Rulio works with modules. Modules should export a function with only one argument, an instace of node-irc Client. Check the node-irc API http://node-irc.readthedocs.org/en/latest/API.html.
+
+Here is a module that echos private messages:
+
+module.exports = exports = function(client) {
+  client.addListener('pm', function (nick, text) {
+     client.say(nick, text);
+  });
+};

@@ -1,0 +1,29 @@
+{
+  "nick": "ruliobot",
+  "password": "password_here",
+  "server": "irc.freenode.net",
+  "connectRetryCount": 3,
+  "client": {
+    "userName": "nodebot",
+    "realName": "nodeJS IRC client",
+    "port": 6667,
+    "debug": true,
+    "showErrors": true,
+    "autoRejoin": true,
+    "autoConnect": false,
+    "channels": [
+      "#join",
+      "#these",
+      "#channels"
+    ],
+    "secure": false,
+    "selfSigned": false,
+    "certExpired": false,
+    "floodProtection": false,
+    "floodProtectionDelay": 1000,
+    "stripColors": false
+  },
+  "modules": [
+    
+  ]
+}

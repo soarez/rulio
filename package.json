@@ -1,0 +1,14 @@
+{
+  "name": "rulio",
+  "description": "Barebones irc bot",
+  "version": "0.1.0",
+  "author": "Igor Soarez <igor@soarez.com>",
+  "dependencies": {
+    "irc": "~0.3.4",
+    "lodash": "~0.3.2"
+  },
+  "engines": {
+    "node": ">=0.6.9"
+  },
+  "scripts" : { "start" : "node server.js" }
+}
