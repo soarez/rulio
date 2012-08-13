@@ -1,4 +1,4 @@
-Rulio, a Barebones irc bot.
+Rulio, a Barebones module based irc bot.
 
 Before running, run npm install and copy config.json.example to config.json (this is '.gitignore'd).
 

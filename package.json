@@ -1,6 +1,6 @@
 {
   "name": "rulio",
-  "description": "Barebones irc bot",
+  "description": "Barebones module based irc bot",
   "version": "0.1.0",
   "author": "Igor Soarez <igor@soarez.com>",
   "dependencies": {
