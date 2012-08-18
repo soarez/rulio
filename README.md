@@ -38,3 +38,7 @@ Load it in `config.json`, by adding it to `modules`, the same way you would requ
       "./echo"
      ]
     ... 
+    
+## License
+
+MIT
