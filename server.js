@@ -16,15 +16,16 @@ if (conf.password) {
   });
 }
 
-conf.modules.forEach(function(module) {
+conf.modules.forEach(function(name) {
   try {
-    require(module)(client);
+    var module = require('./modules/'+name) || require(name);
+    module(client);
   } catch (e) {
-    console.log('Failed to load module %s - %s', module, e);
+    console.log('Failed to load module %s - %s', name, e);
     return;
   }
   
-  console.log('Loaded module %s', module);
+  console.log('Loaded module %s', name);
 });
 
 client.connect(conf.connectRetryCount, function() {

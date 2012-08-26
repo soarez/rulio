@@ -13,8 +13,6 @@ Edit `config.json` to your needs.
 
 ## Run
 
-    npm start
-    # or
     node server
 
 ## Modules
@@ -23,7 +21,7 @@ Rulio works with modules. Modules should export a function with only one argumen
 
 ###### Example
 
-Here is a module that echos private messages. Save it as `echo.js`.
+Here is a module that echos private messages. It is already in the `modules` folder.
 
     module.exports = exports = function(client) {
       client.addListener('pm', function (nick, text) {
@@ -31,11 +29,11 @@ Here is a module that echos private messages. Save it as `echo.js`.
       });
     };
     
-Load it in `config.json`, by adding it to `modules`, the same way you would require it from the root.
+Load it in `config.json`, by adding it to `modules`.
 
     ...
     "modules": [
-      "./echo"
+      "echo"
      ]
     ... 
     
