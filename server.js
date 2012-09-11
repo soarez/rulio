@@ -19,7 +19,7 @@ if (conf.password) {
 conf.modules.forEach(function(name) {
   try {
     var module = require('./modules/'+name) || require(name);
-    module(client);
+    module(client, conf);
   } catch (e) {
     console.log('Failed to load module %s - %s', name, e);
     return;
