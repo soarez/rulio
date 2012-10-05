@@ -18,7 +18,7 @@ if (conf.password) {
 
 conf.modules.forEach(function(module) {
   try {
-    require(module)(client);
+    require(__dirname + module)(client);
   } catch (e) {
     console.log('Failed to load module %s - %s', module, e);
     return;
