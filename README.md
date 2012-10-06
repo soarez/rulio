@@ -47,6 +47,8 @@ On rulio's folder:
 
 This way, npm will symlink the modules folder to a folder named rulio-echo inside node_modules. This way, the module can be `require()`d like any installed npm module.
 
+**Don't forget to publish your rulio module** so we can use it too :) You should [add it to our list of rulio modules in the wiki](https://github.com/Soarez/rulio/wiki/modules).
+
 #### Loading modules
 
 Load it in rulio's `config.json`, by adding it to `modules`.
