@@ -17,7 +17,7 @@ if (conf.password) {
 }
 
 conf.modules.forEach(function(name) {
-  try {
+  try {
     var module = require(name);
     module(client, conf);
   } catch (e) {
