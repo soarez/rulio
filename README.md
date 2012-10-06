@@ -17,23 +17,43 @@ Edit `config.json` to your needs.
 
 ## Modules
 
-Rulio works with modules. Modules should export a function with only one argument, an instace of [node-irc](https://github.com/martynsmith/node-irc/) Client. You should check the [API](http://node-irc.readthedocs.org/en/latest/API.html).
+Rulio works with modules. Modules should export a function with two arguments, an instace of [node-irc](https://github.com/martynsmith/node-irc/) (you should check the [API](http://node-irc.readthedocs.org/en/latest/API.html)) and an object with Rulio's configuration. Client.
+
+**Rulio modules should be [npm modules](http://howtonode.org/how-to-module).**
 
 ###### Example
 
-Here is a module that echos private messages. It is already in the `modules` folder.
+Here is a module that echos private messages. 
 
-    module.exports = exports = function(client) {
+On dedicated folder, create a file named `echo.js` with this:
+
+    module.exports = function(client) {
       client.addListener('pm', function (nick, text) {
          client.say(nick, text);
       });
     };
     
-Load it in `config.json`, by adding it to `modules`.
+Use [`npm init`](https://npmjs.org/doc/init.html) to have npm create a `package.json`, and when set `name` to `rulio-echo` and `main` to `echo.js`.
+
+Now the module can be published with `npm publish` and other rulio users could start using it by using `npm install rulio-echo`. But before publishing we want to test it, and make changes to it. So we use use [`npm link`](https://npmjs.org/doc/link.html) to debug:
+
+On the module folder:
+
+    npm link
+    
+On rulio's folder:
+
+    npm link rulio-echo
+
+This way, npm will symlink the modules folder to a folder named rulio-echo inside node_modules. This way, the module can be `require()`d like any installed npm module.
+
+#### Loading modules
+
+Load it in rulio's `config.json`, by adding it to `modules`.
 
     ...
     "modules": [
-      "echo"
+      "rulio-echo"
      ]
     ... 
     
